@@ -21,6 +21,10 @@ A:hover{color:red}
 
 A quick jot down of stuff. Just getting started. More tweaks to the elo and analytic needed!
 
+<img src="./images/Win_percentage.png">
+
+<img src="./images/Elo_rating.png">
+
 <ul>
 	<li>Keeps track of badminton doubles data and has some analytics.</li>
 	<li>Elo rating: Assigns elo rating for individual players. In general, the main point with elo rating is that it gives importance to the strength of the opposition. If one wins against a weaker opposition, they get lesser points. On the other side, if one wins against a stronger opposition, they get more points.</li>
@@ -33,7 +37,7 @@ A quick jot down of stuff. Just getting started. More tweaks to the elo and anal
 	<li>Assume the score of the losing team is 'D' points.</li>
 	<li>The elochange is calculated as follows:</li>
 
-	\[EL = Kexp(-\lvert elo(T1)-elo(T2) \rvert /a/K)(1-D/100)\]
+	\[EL = K \exp(-\lvert elo(T1)-elo(T2) \rvert /a/K)(1-D/100)\]
 
 	<li>If T1 wins, then each member of T1 gets the above points added to their score and each member of T2 have the above points subtracted from their score.</li>
 
