@@ -1,0 +1,109 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+KN	PJ	SK	GB	14
+
+GB	SV	PJ	SS	11
+
+AT	PJ	SA	SS	15
+
+AT	SV	PJ	SA	14
+
+AT	SA	PJ	SV	15
+
+SS	SV	GB	PJ	18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AS	PJ	AT	SA	17
+SA	SV	PJ	SK	17
+
+AT	SA	PJ	SV	5
+AS	SA	PJ	SK	12
+
+AT	SV	PJ	SA	12
+
+
+
+
+
+
+

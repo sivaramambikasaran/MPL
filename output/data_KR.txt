@@ -1,0 +1,109 @@
+
+
+
+
+
+
+
+
+KN	AS	KR	SV	19
+AT	SA	AS	KR	11
+
+AS	SV	KN	KR	9
+
+KN	SA	KR	SV	15
+
+
+
+
+
+
+
+
+
+
+
+
+
+KR	SA	AS	AT	16
+
+KR	SV	AT	SK	17
+AT	SA	AS	KR	19
+
+SK	SV	AT	KR	13
+AT	SA	KR	SK	12
+
+SA	SV	AT	KR	9
+AS	SA	KR	SV	17
+
+KN	SV	AT	KR	11
+AS	KN	KR	SA	15
+
+
+AT	SA	KR	SV	19
+
+KR	SA	AS	SV	9
+SA	SV	AT	KR	15
+
+AT	SA	AS	KR	15
+AT	SA	KR	SV	17
+KR	SA	AT	SV	18
+SA	SK	KN	KR	15
+
+SA	SV	AT	KR	7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AT	SV	KR	SA	8
+AT	SA	KR	SV	6
+SK	SV	KR	SA	12
+
+AT	KR	SA	SK	15
+AT	SV	KR	SK	7
+

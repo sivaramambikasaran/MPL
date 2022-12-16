@@ -1,0 +1,109 @@
+SA	AT	SV	GB	15
+
+AS	SK	SA	GB	8
+SA	SV	AT	GB	16
+
+SA	AS	SK	GB	11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+KN	PJ	SK	GB	14
+
+GB	SV	PJ	SS	11
+
+
+SK	SV	GB	KN	15
+
+GB	SK	KN	SS	17
+
+KN	GB	SK	SS	15
+SS	SV	GB	PJ	18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+KN	SK	GB	SA	17
+
+SA	SK	AS	GB	12
+AS	SA	GB	SK	7
+SA	SK	AS	GB	13
+AS	SK	GB	SA	17
+AS	SA	GB	SK	20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
