@@ -33,19 +33,22 @@ A quick jot down of stuff. Just getting started. More tweaks to the elo and anal
 	<li>Assume the score of the losing team is 'D' points.</li>
 	<li>The elochange is calculated as follows:</li>
 
-	\[EL = K*exp(-abs(elo(T1)-elo(T2))/a/K)*(1-D/100)\]
+	\[EL = Kexp(-\lvert elo(T1)-elo(T2) \rvert /a/K)(1-D/100)\]
 
 	<li>If T1 wins, then each member of T1 gets the above points added to their score and each member of T2 have the above points subtracted from their score.</li>
 
-	<li>If T2 wins, then each member of T2 gets \((K*(1-D/100)-EL)\) points added to their score and each member of T1 have the \((K*(1-D/100)-EL)\) points subtracted from their score.</li>
+	<li>If T2 wins, then each member of T2 gets \((K(1-D/100)-EL)\) points added to their score and each member of T1 have the \((K(1-D/100)-EL)\) points subtracted from their score.</li>
 
 	<li>Another feature of the above specific elo rating is that it also gives importance to the margin of victory via the factor \((1-D/100)\). If the losing team scores 0 points, then the swing factor (elochange) is higher. If the losing team scores \(20\) points, then the swing factor (elochange) is lower.</li>
 </ul>
 
 <li>Some things to note:</li>
 
-<ul><li> Rounding the elochange has a reasonable effect on the scores; Not surprising. For the uninitiated, see <a href="https://www-users.cse.umn.edu/~arnold/disasters/patriot.html">Patriot Missile Failure</a>, <a href="https://www5.in.tum.de/~huckle/Vancouv.pdf">Vancouver stock market crash</a>, <a href="https://itsfoss.com/a-floating-point-error-that-caused-a-damage-worth-half-a-billion/">The story of Ariane 5</a>
-<a href="https://www.tnasc.com/wp-content/uploads/2020/07/jour3-555-71.pdf">Slightly technical article on floating point arithmetic</a> </li>
+<ul><li> Rounding the elochange has a reasonable effect on the scores (though not catastrophic). For the uninitiated, see how rounding affects computations <li> <a href="https://www-users.cse.umn.edu/~arnold/disasters/patriot.html">Patriot Missile Failure</a></li>
+	<li><a href="https://www5.in.tum.de/~huckle/Vancouv.pdf">Vancouver stock market crash</a></li>
+	<li><a href="https://itsfoss.com/a-floating-point-error-that-caused-a-damage-worth-half-a-billion/">The story of Ariane 5</a></li>
+	<li><a href="https://www.tnasc.com/wp-content/uploads/2020/07/jour3-555-71.pdf">Slightly technical article on floating point arithmetic</a> </li>
+</li>
 
 <li>One can debate about what precise elochange function one has to choose. In chess typically, a higher 'K' value is used for initial games and then a lower 'K' value is used for subsequent games to slot individuals in their "right" rating range.</li>
 </ul>
