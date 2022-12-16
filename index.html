@@ -1,0 +1,23 @@
+Keeps track of badminton doubles data and has some analytics. Just getting started. More to be tweaked and added.
+
+Elo rating: Assigns elo rating based for individual players. Main idea is as follows.
+
+All individuals begin with an elo of 1500 (Why? GOK).
+
+Team 1 (T1) consist of players P1 and P2; Team 2 (T2) consist of players P3 and P4.
+
+T1 elo is 0.5*(elo(P1)+elo(P2)) and T2 elo is 0.5*(elo(P1)+elo(P2)).
+
+Let's also assume that elo(T1)>elo(T2), i.e., T1 are the favourites to win.
+
+Assume the score of the losing team is 'D' points.
+
+The elochange is
+
+EL = K*exp(-abs(elo(T1)-elo(T2))/a/K)*(1-D/100);
+
+If T1 wins, then each member of T1 gets the above points added to their score and each member of T2 have the above points subtracted from their score.
+
+If T2 wins, then each member of T2 gets (K*(1-D/100)-EL) points added to their score and each member of T1 have the (K*(1-D/100)-EL) points subtracted from their score.
+
+In general, the main point with elo rating is that it gives importance to the strength of the opposition. If one wins against a weaker opposition, they get lesser points. On the other side, if one wins against a stronger opposition, they get more points.

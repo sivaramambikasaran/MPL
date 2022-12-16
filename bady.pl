@@ -90,17 +90,16 @@ sub initialise() {
 sub getEloChange {
 	my ($wAvg, $lAvg, $loserscore) = @_; 
 
-	$eloChange = 81/100;
-	if ($loserscore<20) {
-		$eloChange = 1-$loserscore/100;
-	}
+	$eloChange = 1-$loserscore/100;
+	
+	# $eloChange = 1.0;
 	if ($wAvg > $lAvg) {
-		$eloChange *= $K/2*exp(-($wAvg-$lAvg)/($alpha*$K/2));
+		$eloChange *= $K/2*exp(-($wAvg-$lAvg)/($alpha*$K));
 	}
 	else {
-		$eloChange *= $K - $K/2*exp(($wAvg-$lAvg)/($alpha*$K/2));
+		$eloChange *= ($K - $K/2*exp(($wAvg-$lAvg)/($alpha*$K)));
 	}
-	return floor($eloChange);
+	return $eloChange;
 }
 
 sub updateRating {
