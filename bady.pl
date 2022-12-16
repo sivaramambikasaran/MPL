@@ -120,7 +120,7 @@ sub updateRating {
 		$playerCurrentRating{$_} += $eloChange;
 		$playerWins{$_} +=1;
 		$playerGames{$_}+=1;
-		$playerWinPercent{$_}=floor($playerWins{$_}/$playerGames{$_}*100);
+		$playerWinPercent{$_}=$playerWins{$_}/$playerGames{$_}*100;
 	}
 	foreach (@losers) {
 		$playerCurrentRating{$_} -= $eloChange;
