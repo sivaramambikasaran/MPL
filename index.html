@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<title>Badminton Data & Analytics</title>
+<head>
+<style type="text/css">
+body{color:white}
+body{font-family:"Palatino"}
+body{font-size: 1.1em;}
+A:link{color:cyan}
+A:visited{color:cyan}
+A:hover{color:red}
+</style>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<body bgcolor = black>
+	
 Keeps track of badminton doubles data and has some analytics. Just getting started. More to be tweaked and added.
 
 Elo rating: Assigns elo rating based for individual players. Main idea is as follows.
@@ -21,3 +40,12 @@ If T1 wins, then each member of T1 gets the above points added to their score an
 If T2 wins, then each member of T2 gets (K*(1-D/100)-EL) points added to their score and each member of T1 have the (K*(1-D/100)-EL) points subtracted from their score.
 
 In general, the main point with elo rating is that it gives importance to the strength of the opposition. If one wins against a weaker opposition, they get lesser points. On the other side, if one wins against a stronger opposition, they get more points.
+
+Another feature of the above specific elo rating is that it also gives importance to the margin of victory via the factor (1-D/100). If the losing team scores 0 points, then the swing factor (elochange) is higher. If the losing team scores 20 points, then the swing factor (elochange) is lower.
+
+Some things to note:
+
+(i) Rounding the elochange has a reasonable effect on the scores; Not surprising. For the uninitiated, see <a href="https://www-users.cse.umn.edu/~arnold/disasters/patriot.html">Patriot Missile Failure</a>, <a href="https://www5.in.tum.de/~huckle/Vancouv.pdf">Vancouver stock market crash</a>, <a href="https://itsfoss.com/a-floating-point-error-that-caused-a-damage-worth-half-a-billion/">The story of Ariane 5</a>
+<a href="https://www.tnasc.com/wp-content/uploads/2020/07/jour3-555-71.pdf">Slightly technical article on floating point arithmetic</a>
+
+</body></html>
