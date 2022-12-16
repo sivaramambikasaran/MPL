@@ -16,36 +16,38 @@ A:hover{color:red}
 </script>
 
 <body bgcolor = black>
-	
-Keeps track of badminton doubles data and has some analytics. Just getting started. More to be tweaked and added.
 
-Elo rating: Assigns elo rating based for individual players. Main idea is as follows.
+<h1><font color="lawngreen">Badminton Data & Analytics</font></h1>
 
-All individuals begin with an elo of 1500 (Why? GOK).
+A quick jot down of stuff. Just getting started. More tweaks and work needed!!!
 
-Team 1 (T1) consist of players P1 and P2; Team 2 (T2) consist of players P3 and P4.
+<ul>
+	<li>Keeps track of badminton doubles data and has some analytics.</li>
+	<li>Elo rating: Assigns elo rating for individual players. In general, the main point with elo rating is that it gives importance to the strength of the opposition. If one wins against a weaker opposition, they get lesser points. On the other side, if one wins against a stronger opposition, they get more points.</li>
+	<li>Main idea is as follows. More details later.</li>
+	<ul>
+	<li>All individuals begin with an elo of 1500 (Why? GOK; Initial value doesn't matter; some baseline value).</li>
+	<li>Team 1 (T1) consist of players P1 and P2; Team 2 (T2) consist of players P3 and P4.</li>
+	<li>T1 elo is 0.5*(elo(P1)+elo(P2)) and T2 elo is 0.5*(elo(P1)+elo(P2)).</li>
+	<li>Let's also assume that elo(T1)>elo(T2), i.e., T1 are the favourites to win.</li>
+	<li>Assume the score of the losing team is 'D' points.</li>
+	<li>The elochange is calculated as follows:</li>
 
-T1 elo is 0.5*(elo(P1)+elo(P2)) and T2 elo is 0.5*(elo(P1)+elo(P2)).
+	\[EL = K*exp(-abs(elo(T1)-elo(T2))/a/K)*(1-D/100)\]
 
-Let's also assume that elo(T1)>elo(T2), i.e., T1 are the favourites to win.
+	<li>If T1 wins, then each member of T1 gets the above points added to their score and each member of T2 have the above points subtracted from their score.</li>
 
-Assume the score of the losing team is 'D' points.
+	<li>If T2 wins, then each member of T2 gets \((K*(1-D/100)-EL)\) points added to their score and each member of T1 have the \((K*(1-D/100)-EL)\) points subtracted from their score.</li>
 
-The elochange is
+	<li>Another feature of the above specific elo rating is that it also gives importance to the margin of victory via the factor \((1-D/100)\). If the losing team scores 0 points, then the swing factor (elochange) is higher. If the losing team scores \(20\) points, then the swing factor (elochange) is lower.</li>
+</ul>
 
-EL = K*exp(-abs(elo(T1)-elo(T2))/a/K)*(1-D/100);
+<li>Some things to note:</li>
 
-If T1 wins, then each member of T1 gets the above points added to their score and each member of T2 have the above points subtracted from their score.
+<ul><li> Rounding the elochange has a reasonable effect on the scores; Not surprising. For the uninitiated, see <a href="https://www-users.cse.umn.edu/~arnold/disasters/patriot.html">Patriot Missile Failure</a>, <a href="https://www5.in.tum.de/~huckle/Vancouv.pdf">Vancouver stock market crash</a>, <a href="https://itsfoss.com/a-floating-point-error-that-caused-a-damage-worth-half-a-billion/">The story of Ariane 5</a>
+<a href="https://www.tnasc.com/wp-content/uploads/2020/07/jour3-555-71.pdf">Slightly technical article on floating point arithmetic</a> </li>
 
-If T2 wins, then each member of T2 gets (K*(1-D/100)-EL) points added to their score and each member of T1 have the (K*(1-D/100)-EL) points subtracted from their score.
-
-In general, the main point with elo rating is that it gives importance to the strength of the opposition. If one wins against a weaker opposition, they get lesser points. On the other side, if one wins against a stronger opposition, they get more points.
-
-Another feature of the above specific elo rating is that it also gives importance to the margin of victory via the factor (1-D/100). If the losing team scores 0 points, then the swing factor (elochange) is higher. If the losing team scores 20 points, then the swing factor (elochange) is lower.
-
-Some things to note:
-
-(i) Rounding the elochange has a reasonable effect on the scores; Not surprising. For the uninitiated, see <a href="https://www-users.cse.umn.edu/~arnold/disasters/patriot.html">Patriot Missile Failure</a>, <a href="https://www5.in.tum.de/~huckle/Vancouv.pdf">Vancouver stock market crash</a>, <a href="https://itsfoss.com/a-floating-point-error-that-caused-a-damage-worth-half-a-billion/">The story of Ariane 5</a>
-<a href="https://www.tnasc.com/wp-content/uploads/2020/07/jour3-555-71.pdf">Slightly technical article on floating point arithmetic</a>
-
+<li>One can debate about what precise elochange function one has to choose. In chess typically, a higher 'K' value is used for initial games and then a lower 'K' value is used for subsequent games to slot individuals in their "right" rating range.</li>
+</ul>
+</ul>
 </body></html>
