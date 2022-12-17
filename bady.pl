@@ -14,7 +14,7 @@ my @data = <DATA>;
 close (DATA);
 
 # Elo parameters
-my $K=20; my $alpha = 3;
+my $K=20; my $alpha = 10;
 
 sub getCurrentRating (){
 	open(RAT, "<output/ratings.txt");
@@ -48,7 +48,7 @@ sub initialise() {
 	open(RAT,">output/ratings.txt");
 
 	foreach (@player) {
-		print RAT $_, "\t\t";
+		print RAT $_, "\t";
 		}
 	print RAT "\n";
 	foreach (@player) {
@@ -90,9 +90,12 @@ sub initialise() {
 sub getEloChange {
 	my ($wAvg, $lAvg, $loserscore) = @_; 
 
-	$eloChange = 1-$loserscore/100;
+	# $eloChange = 1-$loserscore/100;
 	
 	# $eloChange = 1.0;
+	
+	$eloChange = exp(-$loserscore/20);
+
 	if ($wAvg > $lAvg) {
 		$eloChange *= $K/2*exp(-($wAvg-$lAvg)/($alpha*$K));
 	}
@@ -120,7 +123,7 @@ sub updateRating {
 		$playerCurrentRating{$_} += $eloChange;
 		$playerWins{$_} +=1;
 		$playerGames{$_}+=1;
-		$playerWinPercent{$_}=($playerWins{$_}*100)/$playerGames{$_};
+		$playerWinPercent{$_}=($playerWins{$_}*100.0)/$playerGames{$_};
 	}
 	foreach (@losers) {
 		$playerCurrentRating{$_} -= $eloChange;
