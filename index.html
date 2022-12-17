@@ -119,7 +119,7 @@ A quick jot down of stuff. Just getting started. Need to fix some parts of the c
 	<li>Assume the score of the losing team is 'D' points.</li>
 	<li>The elochange is calculated as follows:</li>
 
-	\[EL = \frac{K}2 \exp\left(-\frac{\lvert elo(T1)-elo(T2) \rvert}{\alpha K} \right)\exp\left(-D/20\right)\]
+	\[EL = \frac{K}2 \exp\left(-\frac{\lvert elo(T1)-elo(T2) \rvert}{M} \right)\exp\left(-D/20\right)\]
 
 	<li>If T1 wins, then each member of T1 gets the above points added to their score and each member of T2 have the above points subtracted from their score.</li>
 
@@ -127,7 +127,7 @@ A quick jot down of stuff. Just getting started. Need to fix some parts of the c
 
 	<li>Another feature of the above specific elo rating is that it also gives importance to the margin of victory via the factor \((1-D/100)\). If the losing team scores 0 points, then the swing factor (elochange) is higher. If the losing team scores \(20\) points, then the swing factor (elochange) is lower.</li>
 	
-	<li> \(K\) is taken as twenty and \(\alpha\) is taken as \(3\).
+	<li> \(K\) is taken as \(20\) and \(M\) is taken as \(200\).
 </ul>
 
 <li>Some things to note:</li>
